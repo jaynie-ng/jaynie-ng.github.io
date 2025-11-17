@@ -1,102 +1,130 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1"/>
-	<title>Jaynie Ng</title>
-	<link rel="stylesheet" href="styles.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Jaynie Ng</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-	<!-- 1) SVG sprite goes here (hidden but loaded once) -->
-	<svg width="0" height="0" style="position:absolute;left:-9999px;top:-9999px">
-		<symbol id="icon-star" viewBox="0 0 24 24">
-			<path fill="currentColor" d="M12 2l2.9 6.6 7.1.6-5.3 4.6 1.6 6.9L12 17l-6.3 3.7 1.6-6.9L2 9.2l7.1-.6L12 2z"/>
-		</symbol>
-		<symbol id="shape-blob" viewBox="0 0 200 200">
-			<path fill="currentColor" d="M41.8,-61.1C54.4,-52.7,64.3,-41.1,69.2,-27.7C74.2,-14.3,74.3,1,68.7,14.1C63.1,27.1,51.9,38,39.4,49.1C26.8,60.3,13.4,71.6,-1.8,74.3C-16.9,76.9,-33.9,71,-46.2,60C-58.4,49,-66,32.8,-70.8,16.1C-75.6,-0.6,-77.6,-18,-71.9,-32.2C-66.1,-46.4,-52.6,-57.4,-38.3,-65.3C-24,-73.1,-12,-77.8,1.2,-79.7C14.5,-81.6,29,-80.8,41.8,-61.1Z"/>
-		</symbol>
-	</svg>
+  <header class="bar">
+    <nav class="container nav">
+      <a class="wordmark" href="#">HELLO!</a>
+      <div class="nav-pills">
+        <a href="#about" class="pill">ABOUT</a>
+        <a href="#projects" class="pill">PROJECTS</a>
+        <a href="#writing" class="pill">∞</a>
+      </div>
+    </nav>
+  </header>
 
-	<!-- 2) Header -->
-	<header class="site-header">
-		<nav class="nav">
-			<a href="#home" class="logo" data-hover>JN</a>
-			<div class="nav-links">
-				<a href="#work" data-hover>Work</a>
-				<a href="#about" data-hover>About</a>
-				<a href="#writing" data-hover>Writing</a>
-			</div>
-		</nav>
-	</header>
+  <main class="container hero-grid" role="main">
+    <!-- Big title block -->
+    <section class="block block-title">
+      <h1 class="title">
+        <span>MY</span><br>
+        <span>WEBSITE</span>
+      </h1>
+    </section>
 
-	<!-- 3) Hero -->
-	<section id="home" class="hero">
-		<div class="hero-bg">
-			<svg class="blob b1"><use href="#shape-blob"/></svg>
-			<svg class="blob b2"><use href="#shape-blob"/></svg>
-			<svg class="blob b3"><use href="#shape-blob"/></svg>
-		</div>
-		<div class="hero-inner" data-reveal>
-			<h1 class="title">Hi, I’m Jaynie</h1>
-			<p class="subtitle">Product + playful web experiments</p>
-			<div class="hero-cta">
-				<a class="btn" href="#work" data-hover>See Projects</a>
-			</div>
-		</div>
-	</section>
+    <!-- Circle face -->
+    <section class="block block-face">
+      <svg viewBox="0 0 200 200" class="face">
+        <circle cx="100" cy="100" r="95" class="fill-c2 stroke-edge"/>
+        <circle cx="110" cy="80"  r="12" class="fill-cream stroke-edge"/>
+        <circle cx="110" cy="80"  r="5"  class="fill-ink"/>
+        <path d="M70 120 Q100 140 130 120" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M50 65 Q100 10 150 65" class="fill-c1"/>
+      </svg>
+    </section>
 
-	<!-- 4) Cards (Work) -->
-	<section id="work" class="section">
-		<h2 data-reveal>Projects</h2>
-		<div class="grid">
-			<a class="card" href="#" data-reveal data-hover>
-				<svg class="icon"><use href="#icon-star"/></svg>
-				<h3>Example Project</h3>
-				<p>Short description goes here.</p>
-			</a>
-			<!-- Duplicate more cards as needed -->
-		</div>
-	</section>
+    <!-- ABOUT ME label -->
+    <section id="about" class="block block-label block-about">
+      <h2>ABOUT ME</h2>
+    </section>
 
-	<!-- 5) Footer -->
-	<footer class="site-footer">
-		<p>© <span id="y"></span> Jaynie Ng</p>
-	</footer>
+    <!-- Blob silhouette -->
+    <section class="block block-blob">
+      <svg viewBox="0 0 200 260" class="blob">
+        <path class="fill-c1 stroke-edge" d="M130 40c18 18 22 49 8 73-16 28-53 48-77 53-19 4-35-3-42-18-8-17-2-40 12-60C49 62 77 40 104 34c11-3 20-1 26 6Z"/>
+      </svg>
+      <div class="speckles"></div>
+    </section>
 
-	<!-- 6) Custom cursor -->
-	<div class="cursor" aria-hidden="true"></div>
+    <!-- Portrait tile -->
+    <section class="block block-portrait">
+      <svg viewBox="0 0 220 220" class="portrait">
+        <rect x="0" y="0" width="220" height="220" rx="16" class="fill-c2"/>
+        <circle cx="120" cy="110" r="68" class="fill-c5 stroke-edge"/>
+        <circle cx="120" cy="105" r="10" class="fill-ink"/>
+        <path d="M80 150 Q120 175 160 150" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M70 90 Q120 60 170 90" class="fill-ink"/>
+      </svg>
+    </section>
 
-	<script>
-		// Year
-		document.getElementById('y').textContent = new Date().getFullYear();
+    <!-- STATE OF THE ART label -->
+    <section id="writing" class="block block-label block-soa">
+      <h2>STATE OF THE ART</h2>
+    </section>
 
-		// Reveal on scroll (zero dependency)
-		const els = document.querySelectorAll('[data-reveal]');
-		const io = new IntersectionObserver(entries=>{
-			entries.forEach(e=>{
-				if(e.isIntersecting){
-					e.target.style.opacity = 1;
-					e.target.style.transform = 'translateY(0)';
-					io.unobserve(e.target);
-				}
-			});
-		},{threshold:0.15});
-		els.forEach(el=>{
-			el.style.opacity = 0;
-			el.style.transform = 'translateY(12px)';
-			el.style.transition = 'opacity .6s ease, transform .6s ease';
-			io.observe(el);
-		});
+    <!-- Flower tile -->
+    <section class="block block-flower">
+      <svg viewBox="0 0 200 200" class="flower">
+        <rect width="200" height="200" rx="16" class="fill-c4"/>
+        <circle cx="100" cy="90" r="22" class="fill-cream stroke-edge"/>
+        <g class="petals">
+          <circle cx="100" cy="54" r="22" class="fill-c5 stroke-edge"/>
+          <circle cx="136" cy="74" r="22" class="fill-c5 stroke-edge"/>
+          <circle cx="64"  cy="74" r="22" class="fill-c5 stroke-edge"/>
+          <circle cx="124" cy="110" r="22" class="fill-c5 stroke-edge"/>
+          <circle cx="76"  cy="110" r="22" class="fill-c5 stroke-edge"/>
+        </g>
+        <path d="M100 112 v35" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M100 135 Q78 140 70 160" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M100 135 Q122 140 130 160" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
+      </svg>
+    </section>
 
-		// Custom cursor
-		const cursor = document.querySelector('.cursor');
-		window.addEventListener('pointermove', e=>{
-			cursor.style.transform = `translate(${e.clientX-10}px, ${e.clientY-10}px)`;
-		});
-		document.querySelectorAll('[data-hover]').forEach(el=>{
-			el.addEventListener('mouseenter',()=>document.documentElement.setAttribute('data-hover','true'));
-			el.addEventListener('mouseleave',()=>document.documentElement.removeAttribute('data-hover'));
-		});
-	</script>
+    <!-- Heart chat bubble -->
+    <section class="block block-chat">
+      <svg viewBox="0 0 200 200" class="chat">
+        <rect width="200" height="200" rx="16" class="fill-c1"/>
+        <path d="M45 70 h110 a20 20 0 0 1 20 20 v20 a20 20 0 0 1-20 20 h-46 l-22 22 v-22 H45 a20 20 0 0 1-20-20 V90 a20 20 0 0 1 20-20Z" class="fill-ink"/>
+        <path d="M100 94c8-12 28-7 28 7 0 18-28 28-28 28s-28-10-28-28c0-14 20-19 28-7Z" class="fill-cream"/>
+      </svg>
+    </section>
+
+    <!-- Stamp check -->
+    <section class="block block-stamp">
+      <div class="stamp">
+        <div class="stamp-inner">
+          <svg viewBox="0 0 100 70" class="tick">
+            <path d="M15 38 l18 18 52-44" class="stroke-ink" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pencil tile -->
+    <section id="projects" class="block block-pencil">
+      <svg viewBox="0 0 200 200" class="pencil">
+        <rect width="200" height="200" rx="24" class="fill-c1"/>
+        <g transform="translate(30,70) rotate(-15)">
+          <rect x="0" y="0" width="110" height="24" rx="12" class="fill-c3 stroke-edge"/>
+          <rect x="12" y="0" width="82" height="24" rx="12" class="fill-c3 stroke-edge"/>
+          <rect x="110" y="-2" width="26" height="28" rx="6" class="fill-cream stroke-edge"/>
+          <polygon points="136,12 152,0 152,24" class="fill-c4 stroke-edge"/>
+        </g>
+      </svg>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="y"></span> Jaynie Ng</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
