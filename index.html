@@ -1,130 +1,1076 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaynie Ng</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <header class="bar">
-    <nav class="container nav">
-      <a class="wordmark" href="#">HELLO!</a>
-      <div class="nav-pills">
-        <a href="#about" class="pill">ABOUT</a>
-        <a href="#projects" class="pill">PROJECTS</a>
-        <a href="#writing" class="pill">∞</a>
-      </div>
-    </nav>
-  </header>
 
-  <main class="container hero-grid" role="main">
-    <!-- Big title block -->
-    <section class="block block-title">
-      <h1 class="title">
-        <span>MY</span><br>
-        <span>WEBSITE</span>
-      </h1>
-    </section>
+  <!-- Tailwind CSS + DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Circle face -->
-    <section class="block block-face">
-      <svg viewBox="0 0 200 200" class="face">
-        <circle cx="100" cy="100" r="95" class="fill-c2 stroke-edge"/>
-        <circle cx="110" cy="80"  r="12" class="fill-cream stroke-edge"/>
-        <circle cx="110" cy="80"  r="5"  class="fill-ink"/>
-        <path d="M70 120 Q100 140 130 120" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path d="M50 65 Q100 10 150 65" class="fill-c1"/>
-      </svg>
-    </section>
+  <!-- Custom Styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
-    <!-- ABOUT ME label -->
-    <section id="about" class="block block-label block-about">
-      <h2>ABOUT ME</h2>
-    </section>
+    :root {
+      --c1: #AD82D9; /* purple */
+      --c2: #79D9C7; /* mint/cyan */
+      --c3: #A9D979; /* lime */
+      --c4: #F2B33D; /* amber */
+      --c5: #F29C94; /* peach */
+      --paper: #F5F0E8;
+      --ink: #121212;
+    }
 
-    <!-- Blob silhouette -->
-    <section class="block block-blob">
-      <svg viewBox="0 0 200 260" class="blob">
-        <path class="fill-c1 stroke-edge" d="M130 40c18 18 22 49 8 73-16 28-53 48-77 53-19 4-35-3-42-18-8-17-2-40 12-60C49 62 77 40 104 34c11-3 20-1 26 6Z"/>
-      </svg>
-      <div class="speckles"></div>
-    </section>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
 
-    <!-- Portrait tile -->
-    <section class="block block-portrait">
-      <svg viewBox="0 0 220 220" class="portrait">
-        <rect x="0" y="0" width="220" height="220" rx="16" class="fill-c2"/>
-        <circle cx="120" cy="110" r="68" class="fill-c5 stroke-edge"/>
-        <circle cx="120" cy="105" r="10" class="fill-ink"/>
-        <path d="M80 150 Q120 175 160 150" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path d="M70 90 Q120 60 170 90" class="fill-ink"/>
-      </svg>
-    </section>
+    .heading-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
 
-    <!-- STATE OF THE ART label -->
-    <section id="writing" class="block block-label block-soa">
-      <h2>STATE OF THE ART</h2>
-    </section>
+    /* Smooth transitions between sections */
+    .section-content {
+      animation: fadeIn 0.4s ease-in;
+    }
 
-    <!-- Flower tile -->
-    <section class="block block-flower">
-      <svg viewBox="0 0 200 200" class="flower">
-        <rect width="200" height="200" rx="16" class="fill-c4"/>
-        <circle cx="100" cy="90" r="22" class="fill-cream stroke-edge"/>
-        <g class="petals">
-          <circle cx="100" cy="54" r="22" class="fill-c5 stroke-edge"/>
-          <circle cx="136" cy="74" r="22" class="fill-c5 stroke-edge"/>
-          <circle cx="64"  cy="74" r="22" class="fill-c5 stroke-edge"/>
-          <circle cx="124" cy="110" r="22" class="fill-c5 stroke-edge"/>
-          <circle cx="76"  cy="110" r="22" class="fill-c5 stroke-edge"/>
-        </g>
-        <path d="M100 112 v35" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path d="M100 135 Q78 140 70 160" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path d="M100 135 Q122 140 130 160" class="stroke-ink" stroke-width="8" fill="none" stroke-linecap="round"/>
-      </svg>
-    </section>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    <!-- Heart chat bubble -->
-    <section class="block block-chat">
-      <svg viewBox="0 0 200 200" class="chat">
-        <rect width="200" height="200" rx="16" class="fill-c1"/>
-        <path d="M45 70 h110 a20 20 0 0 1 20 20 v20 a20 20 0 0 1-20 20 h-46 l-22 22 v-22 H45 a20 20 0 0 1-20-20 V90 a20 20 0 0 1 20-20Z" class="fill-ink"/>
-        <path d="M100 94c8-12 28-7 28 7 0 18-28 28-28 28s-28-10-28-28c0-14 20-19 28-7Z" class="fill-cream"/>
-      </svg>
-    </section>
+    /* Pop-art thick borders */
+    .pop-border {
+      border: 4px solid var(--ink);
+    }
 
-    <!-- Stamp check -->
-    <section class="block block-stamp">
-      <div class="stamp">
-        <div class="stamp-inner">
-          <svg viewBox="0 0 100 70" class="tick">
-            <path d="M15 38 l18 18 52-44" class="stroke-ink" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </section>
+    /* Mixed media texture overlay */
+    .texture-overlay {
+      position: relative;
+    }
 
-    <!-- Pencil tile -->
-    <section id="projects" class="block block-pencil">
-      <svg viewBox="0 0 200 200" class="pencil">
-        <rect width="200" height="200" rx="24" class="fill-c1"/>
-        <g transform="translate(30,70) rotate(-15)">
-          <rect x="0" y="0" width="110" height="24" rx="12" class="fill-c3 stroke-edge"/>
-          <rect x="12" y="0" width="82" height="24" rx="12" class="fill-c3 stroke-edge"/>
-          <rect x="110" y="-2" width="26" height="28" rx="6" class="fill-cream stroke-edge"/>
-          <polygon points="136,12 152,0 152,24" class="fill-c4 stroke-edge"/>
-        </g>
-      </svg>
-    </section>
-  </main>
+    .texture-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(18, 18, 18, 0.03) 2px, rgba(18, 18, 18, 0.03) 4px),
+        radial-gradient(circle, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 8px 8px;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
 
-  <footer class="container footer">
-    <small>© <span id="y"></span> Jaynie Ng</small>
-  </footer>
+    /* Custom scrollbar for timeline */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: var(--paper);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--c1);
+      border-radius: 4px;
+    }
+
+    /* Active nav indicator */
+    .nav-item.active {
+      background: var(--c4);
+      transform: translateX(4px) scale(1.02);
+      box-shadow: 4px 4px 0 rgba(18, 18, 18, 0.3);
+    }
+
+    /* Navigation item colors - each gets its own color */
+    .nav-item[data-section="home"] {
+      background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item[data-section="about"] {
+      background: linear-gradient(135deg, var(--c2) 0%, var(--c3) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item[data-section="experience"] {
+      background: linear-gradient(135deg, var(--c3) 0%, var(--c4) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item[data-section="projects"] {
+      background: linear-gradient(135deg, var(--c4) 0%, var(--c5) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item[data-section="writing"] {
+      background: linear-gradient(135deg, var(--c5) 0%, var(--c1) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item[data-section="tango"] {
+      background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+      border: 3px solid var(--ink);
+    }
+
+    .nav-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255, 255, 255, 0.1) 3px, rgba(255, 255, 255, 0.1) 6px),
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .nav-item:hover {
+      transform: translateX(8px) rotate(-1deg) scale(1.05);
+      box-shadow: 6px 6px 0 rgba(18, 18, 18, 0.3);
+    }
+
+    /* Decorative shapes in sidebar */
+    .sidebar-deco {
+      position: absolute;
+      border: 3px solid var(--paper);
+      opacity: 0.15;
+      pointer-events: none;
+      animation: floatSlow 8s ease-in-out infinite;
+    }
+
+    .sidebar-deco:nth-child(2) {
+      animation-delay: 1s;
+      animation-duration: 10s;
+    }
+
+    .sidebar-deco:nth-child(3) {
+      animation-delay: 2s;
+      animation-duration: 9s;
+    }
+
+    .sidebar-deco:nth-child(4) {
+      animation-delay: 3s;
+      animation-duration: 11s;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    /* Rotating shapes animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    .floating-shape {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-shape:nth-child(2) {
+      animation-delay: 1s;
+      animation-duration: 7s;
+    }
+
+    .floating-shape:nth-child(3) {
+      animation-delay: 2s;
+      animation-duration: 8s;
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0 !important;
+      left: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: 100vh;
+      z-index: 50;
+      transition: left 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-nav {
+        margin-top: 0 !important;
+        padding-top: 0;
+      }
+    }
+
+    .mobile-nav.active {
+      left: 0;
+    }
+
+    /* Hamburger animation */
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: var(--ink);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .floating-shape {
+        display: none;
+      }
+    }
+  </style>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'c1': '#AD82D9',
+            'c2': '#79D9C7',
+            'c3': '#A9D979',
+            'c4': '#F2B33D',
+            'c5': '#F29C94',
+            'paper': '#F5F0E8',
+            'ink': '#121212',
+          }
+        }
+      }
+    }
   </script>
+</head>
+<body class="overflow-hidden">
+
+  <!-- Mobile Header -->
+  <header class="md:hidden fixed top-0 left-0 right-0 bg-gradient-to-r from-c4 to-c5 pop-border border-t-0 border-l-0 border-r-0 z-30 flex items-center justify-between px-4 py-3">
+    <div>
+      <h1 class="text-xl font-bold heading-font text-ink">JAYNIE NG</h1>
+      <p class="text-xs text-ink font-semibold">✦ making things ✦</p>
+    </div>
+    <button onclick="toggleMobileMenu()" class="hamburger p-2">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay md:hidden" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+  <!-- Mobile Navigation (Fixed overlay) -->
+  <aside class="md:hidden mobile-nav w-64 bg-paper text-ink pop-border border-l-0 border-t-0 border-b-0 flex flex-col overflow-hidden" id="mobileNav">
+
+    <!-- Decorative Background Shapes -->
+    <div class="sidebar-deco absolute top-10 -right-10 w-32 h-32 rounded-full bg-c1"></div>
+    <div class="sidebar-deco absolute top-40 -left-10 w-24 h-24 bg-c3" style="transform: rotate(45deg);"></div>
+    <div class="sidebar-deco absolute bottom-32 right-4 w-20 h-20 rounded-full bg-c5"></div>
+    <div class="sidebar-deco absolute bottom-10 -left-8 w-28 h-28 bg-c4" style="border-radius: 40% 60% 60% 40%;"></div>
+
+    <!-- Logo/Name -->
+    <div class="p-6 border-b-4 border-ink relative z-10 bg-gradient-to-r from-c4 to-c5">
+      <h1 class="text-2xl font-bold heading-font tracking-tight text-ink">JAYNIE NG</h1>
+      <p class="text-sm text-ink font-semibold mt-1">✦ making things ✦</p>
+    </div>
+
+    <!-- Navigation Items -->
+    <nav class="flex-1 p-4 relative z-10">
+      <ul class="space-y-3">
+        <li>
+          <button onclick="showSection('home'); closeMobileMenu()" class="nav-item active w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="home">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🏠</span>
+              <span class="text-ink">Home</span>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onclick="showSection('about'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="about">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">👋</span>
+              <span class="text-ink">About</span>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onclick="showSection('experience'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="experience">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💼</span>
+              <span class="text-ink">Experience</span>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onclick="showSection('projects'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="projects">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🎨</span>
+              <span class="text-ink">Projects</span>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onclick="showSection('writing'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="writing">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">✍️</span>
+              <span class="text-ink">Writing</span>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onclick="showSection('tango'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="tango">
+            <div class="flex items-center gap-3">
+              <img src="images/tango-bigeyes.png" alt="Tango" class="w-8 h-8 object-contain">
+              <span class="text-ink">Tango</span>
+            </div>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Footer -->
+    <div class="p-4 border-t-4 border-ink relative z-10 bg-gradient-to-r from-c5 to-c1">
+      <p class="text-xs font-bold text-center text-ink">© <span id="year"></span> JAYNIE NG 2025</p>
+      <p class="text-xs text-center text-ink mt-1">Made with ✨</p>
+    </div>
+  </aside>
+
+  <div class="flex h-screen md:pt-0 pt-16">
+
+    <!-- Side Navigation (Desktop Only) -->
+    <aside class="hidden md:flex w-64 bg-paper text-ink pop-border border-l-0 border-t-0 border-b-0 flex-col relative overflow-hidden">
+
+      <!-- Decorative Background Shapes -->
+      <div class="sidebar-deco absolute top-10 -right-10 w-32 h-32 rounded-full bg-c1"></div>
+      <div class="sidebar-deco absolute top-40 -left-10 w-24 h-24 bg-c3" style="transform: rotate(45deg);"></div>
+      <div class="sidebar-deco absolute bottom-32 right-4 w-20 h-20 rounded-full bg-c5"></div>
+      <div class="sidebar-deco absolute bottom-10 -left-8 w-28 h-28 bg-c4" style="border-radius: 40% 60% 60% 40%;"></div>
+
+      <!-- Logo/Name -->
+      <div class="p-6 border-b-4 border-ink relative z-10 bg-gradient-to-r from-c4 to-c5">
+        <h1 class="text-2xl font-bold heading-font tracking-tight text-ink">JAYNIE NG</h1>
+        <p class="text-sm text-ink font-semibold mt-1">✦ making things ✦</p>
+      </div>
+
+      <!-- Navigation Items -->
+      <nav class="flex-1 p-4 relative z-10">
+        <ul class="space-y-3">
+          <li>
+            <button onclick="showSection('home'); closeMobileMenu()" class="nav-item active w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="home">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🏠</span>
+                <span class="text-ink">Home</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('about'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="about">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">👋</span>
+                <span class="text-ink">About</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('experience'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="experience">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">💼</span>
+                <span class="text-ink">Experience</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('projects'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="projects">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🎨</span>
+                <span class="text-ink">Projects</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('writing'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="writing">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">✍️</span>
+                <span class="text-ink">Writing</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('tango'); closeMobileMenu()" class="nav-item w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-200 shadow-lg" data-section="tango">
+              <div class="flex items-center gap-3">
+                <img src="images/tango-bigeyes.png" alt="Tango" class="w-8 h-8 object-contain">
+                <span class="text-ink">Tango</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+    </nav>
+
+    <!-- Footer -->
+    <div class="p-4 border-t-4 border-ink relative z-10 bg-gradient-to-r from-c5 to-c1">
+      <p class="text-xs font-bold text-center text-ink">© <span id="year"></span> JAYNIE NG 2025</p>
+      <p class="text-xs text-center text-ink mt-1">Made with ✨</p>
+    </div>
+  </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto custom-scrollbar">
+
+      <!-- HOME SECTION -->
+      <section id="home-section" class="section-content min-h-screen p-4 md:p-12 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto h-full flex items-center justify-center">
+
+          <!-- Artistic/Dynamic Landing -->
+          <div class="relative w-full">
+
+            <!-- Floating geometric shapes (pop-art + mixed media blend) -->
+            <div class="absolute inset-0 pointer-events-none">
+
+              <!-- Purple circle -->
+              <div class="floating-shape absolute top-20 left-20 w-32 h-32 rounded-full bg-c1 pop-border texture-overlay opacity-80"></div>
+
+              <!-- Mint square -->
+              <div class="floating-shape absolute top-40 right-32 w-28 h-28 bg-c2 pop-border texture-overlay opacity-70" style="transform: rotate(12deg);"></div>
+
+              <!-- Lime triangle -->
+              <div class="floating-shape absolute bottom-32 left-40 w-0 h-0 border-l-[60px] border-l-transparent border-r-[60px] border-r-transparent border-b-[100px] border-b-c3 opacity-75" style="filter: drop-shadow(0 0 0 var(--ink)) drop-shadow(4px 4px 0 var(--ink));"></div>
+
+              <!-- Peach blob -->
+              <div class="floating-shape absolute bottom-20 right-20 w-36 h-36 bg-c5 pop-border opacity-80" style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
+
+              <!-- Amber pill -->
+              <div class="floating-shape absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-24 bg-c4 pop-border rounded-full texture-overlay opacity-60" style="transform: translate(-50%, -50%) rotate(-25deg);"></div>
+            </div>
+
+            <!-- Central Content -->
+            <div class="relative z-10 text-center">
+              <div class="bg-paper/90 backdrop-blur-sm pop-border rounded-3xl p-6 md:p-12 shadow-2xl texture-overlay">
+                <h2 class="text-4xl md:text-6xl font-bold heading-font mb-4">Welcome!</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">Explore my work, experience, and writing</p>
+
+                <!-- Quick Navigation Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8">
+                  <button onclick="showSection('about'); closeMobileMenu()" class="bg-c1 hover:bg-opacity-80 pop-border rounded-xl p-4 transition-transform hover:scale-105">
+                    <div class="text-3xl mb-2">👋</div>
+                    <div class="font-semibold text-sm">About</div>
+                  </button>
+                  <button onclick="showSection('experience'); closeMobileMenu()" class="bg-c2 hover:bg-opacity-80 pop-border rounded-xl p-4 transition-transform hover:scale-105">
+                    <div class="text-3xl mb-2">💼</div>
+                    <div class="font-semibold text-sm">Experience</div>
+                  </button>
+                  <button onclick="showSection('projects'); closeMobileMenu()" class="bg-c3 hover:bg-opacity-80 pop-border rounded-xl p-4 transition-transform hover:scale-105">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <div class="font-semibold text-sm">Projects</div>
+                  </button>
+                  <button onclick="showSection('writing'); closeMobileMenu()" class="bg-c5 hover:bg-opacity-80 pop-border rounded-xl p-4 transition-transform hover:scale-105">
+                    <div class="text-3xl mb-2">✍️</div>
+                    <div class="font-semibold text-sm">Writing</div>
+                  </button>
+                   <button onclick="showSection('tango'); closeMobileMenu()" class="bg-gradient-to-br from-c1 to-c2 hover:opacity-80 pop-border rounded-xl p-4 transition-transform hover:scale-105">
+                    <img src="images/tango-bigeyes.png" alt="Tango" class="w-12 h-12 mx-auto mb-2 object-contain">
+                    <div class="font-semibold text-sm">Tango</div>
+                  </button>
+                </div>
+
+                <p class="text-sm text-gray-500 mt-8 italic">✨ Future: Interactive game coming soon!</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about-section" class="section-content min-h-screen p-4 md:p-12 hidden">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold heading-font mb-8 pop-border inline-block px-4 md:px-6 py-2 md:py-3 bg-c1 rounded-2xl">About Me</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+            <!-- Profile Card with Mixed Media Style -->
+            <div class="pop-border rounded-2xl p-8 bg-c2 texture-overlay">
+              <div class="w-48 h-48 mx-auto mb-6 rounded-full pop-border bg-c5 flex items-center justify-center text-8xl">
+                👤
+              </div>
+              <h3 class="text-2xl font-bold text-center mb-2">Jaynie Ng</h3>
+              <p class="text-center text-gray-700">Your title/role here</p>
+            </div>
+
+            <!-- Bio Card -->
+            <div class="pop-border rounded-2xl p-8 bg-paper texture-overlay">
+              <h3 class="text-2xl font-bold heading-font mb-4 text-c1">Hi there! 👋</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                [Add your bio here - tell your story, what you do, what you're passionate about]
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                [More about your background, interests, and what drives you]
+              </p>
+
+              <!-- Skills/Interests Tags -->
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-c3 pop-border rounded-full text-sm font-medium">Design</span>
+                <span class="px-3 py-1 bg-c4 pop-border rounded-full text-sm font-medium">Development</span>
+                <span class="px-3 py-1 bg-c5 pop-border rounded-full text-sm font-medium">Writing</span>
+                <!-- Add more tags as needed -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Info Cards -->
+          <div class="grid md:grid-cols-3 gap-6 mt-8">
+            <div class="pop-border rounded-xl p-6 bg-c4 text-center">
+              <div class="text-4xl mb-3">📍</div>
+              <h4 class="font-bold mb-1">Location</h4>
+              <p class="text-sm">Your City</p>
+            </div>
+            <div class="pop-border rounded-xl p-6 bg-c1 text-center">
+              <div class="text-4xl mb-3">📧</div>
+              <h4 class="font-bold mb-1">Contact</h4>
+              <p class="text-sm">your@email.com</p>
+            </div>
+            <div class="pop-border rounded-xl p-6 bg-c2 text-center">
+              <div class="text-4xl mb-3">🔗</div>
+              <h4 class="font-bold mb-1">Links</h4>
+              <p class="text-sm">LinkedIn • GitHub</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience-section" class="section-content min-h-screen p-4 md:p-12 hidden">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold heading-font mb-8 pop-border inline-block px-4 md:px-6 py-2 md:py-3 bg-c2 rounded-2xl">Experience</h2>
+
+          <!-- Visual Timeline -->
+          <div class="mt-12 relative">
+
+            <!-- Timeline Items -->
+            <div class="space-y-8">
+
+              <!-- Experience Item 1 -->
+              <div class="relative pl-0 md:pl-20">
+                <div class="absolute left-0 top-6 w-16 h-16 rounded-full bg-c1 pop-border items-center justify-center text-3xl hidden md:flex">
+                  🛡️
+                </div>
+                <div class="pop-border rounded-2xl bg-paper texture-overlay overflow-hidden">
+                  <button onclick="toggleExpand(this)" class="w-full p-6 text-left hover:bg-c4/10 transition-colors">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-2xl font-bold heading-font">Digital Product Owner</h3>
+                        <p class="text-lg text-gray-600 mt-1">TAL | Sydney, Australia</p>
+                        <p class="text-sm text-gray-500 mt-2">Oct 2024 - Present</p>
+                      </div>
+                      <svg class="w-6 h-6 transform transition-transform expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="expandable-content hidden px-6 pb-6">
+                    <div class="border-t-4 border-ink pt-4">
+                      <p class="text-gray-700 leading-relaxed mb-4">
+                        TAL is Australia's largest life insurer with a market share of 34%, paying ~$4.7B in claims in the year prior to 31 March 2025. Within the Claims Transformation business unit, my achievements include:
+                      </p>
+                      <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Increasing member adoption by 11% and retention by 60% in 6 months, alongside an 80% reduction in production tickets through strategic prioritisation and delivery of industry-leading initiatives. </li>
+                        <li>Leading technology migration of 10+ superannuation funds, including 3 of Australia's top 5 by members, enhancing member experiences and strengthening partner relationships and trust. </li>
+                        <li>Boosting Agile CI/CD release cadence by 150% through process standardisation and cross-functional alignment.</li>
+                      </ul>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-c3 rounded-full text-xs font-medium">Skill 1</span>
+                        <span class="px-3 py-1 bg-c5 rounded-full text-xs font-medium">Skill 2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Item 2 -->
+              <div class="relative pl-0 md:pl-20">
+                <div class="absolute left-0 top-6 w-16 h-16 rounded-full bg-c3 pop-border items-center justify-center text-3xl hidden md:flex">
+                  📊
+                </div>
+                <div class="pop-border rounded-2xl bg-paper texture-overlay overflow-hidden">
+                  <button onclick="toggleExpand(this)" class="w-full p-6 text-left hover:bg-c4/10 transition-colors">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-2xl font-bold heading-font">Technical Product Owner/Software Engineer II</h3>
+                        <p class="text-lg text-gray-600 mt-1">Honeywell | Sydney, Australia</p>
+                        <p class="text-sm text-gray-500 mt-2">Sept 2022 - Sept 2024</p>
+                      </div>
+                      <svg class="w-6 h-6 transform transition-transform expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="expandable-content hidden px-6 pb-6">
+                    <div class="border-t-4 border-ink pt-4">
+                      <p class="text-gray-700 leading-relaxed mb-4">
+                        Honeywell Industrial Automation Software Centre innovates efficient and safe system control and automation for industrial facilities and pipelines. Within the Industrial Automation business unit, my key achievements include:
+                      </p>
+                      <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Specification of a new AI-powered feature by evaluating global customer requirements and crafting functional and non-functional requirements.</li>
+                        <li>Building relationships to collaborate closely with cross-functional Agile teams (including Engineering and UX) to develop user experience flows and prototypes, leading to the successful delivery of 2 product releases.</li>
+                        <li>Cultivating domain expertise across 3 product verticals (AI-driven operational support, cloud-native manufacturing control, predictive energy control) to drive innovation and excellence.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Item 3 -->
+              <div class="relative pl-0 md:pl-20">
+                <div class="absolute left-0 top-6 w-16 h-16 rounded-full bg-c3 pop-border items-center justify-center font-bold hidden md:flex">
+                  2019
+                </div>
+                <div class="pop-border rounded-2xl bg-paper texture-overlay overflow-hidden">
+                  <button onclick="toggleExpand(this)" class="w-full p-6 text-left hover:bg-c4/10 transition-colors">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-2xl font-bold heading-font">Project Engineer</h3>
+                        <p class="text-lg text-gray-600 mt-1">Honeywell | Auckland, New Zealand</p>
+                        <p class="text-sm text-gray-500 mt-2">Nov 2019 - Aug 2022</p>
+                      </div>
+                      <svg class="w-6 h-6 transform transition-transform expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="expandable-content hidden px-6 pb-6">
+                    <div class="border-t-4 border-ink pt-4">
+                      <p class="text-gray-700 leading-relaxed mb-4">
+                        Honeywell Building Automation business unit delivers building services engineering for major infrastructure projects. My key achievements include:
+                      </p>
+                      <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Fulfilling numerous critical client milestones in 2 Global Major Projects (>$10M USD) by directing local and international teams by maintaining a prioritised backlog with meticulous output reviews.</li>
+                        <li>Achieving 7 contractual milestones in 1 year through the design and engineering of 4 electronic building services systems (CCTV, Access Control, Public Announcement, Telephony) for City Rail Link ($4.4B NZD).</li>
+                        <li>Resolving over 25 complex construction dependencies in a high-pressure environment by managing internal and external stakeholders through extensive requirement identification and collaboration.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Item 4 -->
+              <div class="relative pl-0 md:pl-20">
+                <div class="absolute left-0 top-6 w-16 h-16 rounded-full bg-c3 pop-border items-center justify-center font-bold hidden md:flex">
+                  2017
+                </div>
+                <div class="pop-border rounded-2xl bg-paper texture-overlay overflow-hidden">
+                  <button onclick="toggleExpand(this)" class="w-full p-6 text-left hover:bg-c4/10 transition-colors">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-2xl font-bold heading-font">Bachelor of Engineering (Honours)</h3>
+                        <p class="text-lg text-gray-600 mt-1">University of Auckland | Auckland, New Zealand</p>
+                        <p class="text-sm text-gray-500 mt-2">2017 - 2020</p>
+                      </div>
+                      <svg class="w-6 h-6 transform transition-transform expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="expandable-content hidden px-6 pb-6">
+                    <div class="border-t-4 border-ink pt-4">
+                      <p class="text-gray-700 leading-relaxed mb-4">
+                        Specialised in Mechatronics Engineering.
+                      </p>
+                      <p class="text-gray-700 leading-relaxed mb-4">
+                        Highlights include:
+                      </p>
+                      <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Sir Colin Maiden Scholar - Dean's Leadership Programme</li>
+                        <li>Founder and President of the Mechanical and Mechatronics Engineering Student Association</li>
+                        <li>IEEE Student Branch Committee</li>
+                        <li>Engineering Revue Cast</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects-section" class="section-content min-h-screen p-4 md:p-12 hidden">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold heading-font mb-8 pop-border inline-block px-4 md:px-6 py-2 md:py-3 bg-c3 rounded-2xl">Projects</h2>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-12">
+
+            <!-- Project Card 1 -->
+            <div class="pop-border rounded-2xl overflow-hidden bg-paper texture-overlay hover:shadow-2xl transition-shadow">
+              <div class="h-48 bg-gradient-to-br from-c1 to-c5 flex items-center justify-center text-6xl">
+                🎨
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold heading-font mb-2">Project Title 1</h3>
+                <p class="text-gray-600 text-sm mb-4">Year • Category</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Brief description of the project, what you built, technologies used, and the impact or outcome.
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="px-4 py-2 bg-c1 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">View Project</a>
+                  <a href="#" class="px-4 py-2 bg-ink text-paper pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="pop-border rounded-2xl overflow-hidden bg-paper texture-overlay hover:shadow-2xl transition-shadow">
+              <div class="h-48 bg-gradient-to-br from-c2 to-c4 flex items-center justify-center text-6xl">
+                💻
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold heading-font mb-2">Project Title 2</h3>
+                <p class="text-gray-600 text-sm mb-4">Year • Category</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Another project description highlighting your work and achievements.
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="px-4 py-2 bg-c2 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">View Project</a>
+                  <a href="#" class="px-4 py-2 bg-ink text-paper pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="pop-border rounded-2xl overflow-hidden bg-paper texture-overlay hover:shadow-2xl transition-shadow">
+              <div class="h-48 bg-gradient-to-br from-c3 to-c1 flex items-center justify-center text-6xl">
+                🚀
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold heading-font mb-2">Project Title 3</h3>
+                <p class="text-gray-600 text-sm mb-4">Year • Category</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Description of another interesting project you've worked on.
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="px-4 py-2 bg-c3 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">View Project</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="pop-border rounded-2xl overflow-hidden bg-paper texture-overlay hover:shadow-2xl transition-shadow">
+              <div class="h-48 bg-gradient-to-br from-c4 to-c2 flex items-center justify-center text-6xl">
+                ⚡
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold heading-font mb-2">Project Title 4</h3>
+                <p class="text-gray-600 text-sm mb-4">Year • Category</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Yet another awesome project showcasing your skills.
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="px-4 py-2 bg-c4 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">View Project</a>
+                  <a href="#" class="px-4 py-2 bg-ink text-paper pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-sm">Demo</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- WRITING SECTION -->
+      <section id="writing-section" class="section-content min-h-screen p-4 md:p-12 hidden">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold heading-font mb-8 pop-border inline-block px-4 md:px-6 py-2 md:py-3 bg-c5 rounded-2xl">Writing</h2>
+
+          <div class="mt-8 mb-6 flex items-center gap-3">
+            <p class="text-gray-600">My recent theatre and dance reviews for <a href="https://stateoftheart.net.au/" target="_blank" class="font-bold text-c1 hover:underline">State of the Art</a></p>
+            <div id="loading-indicator" class="text-sm text-gray-500">Loading posts...</div>
+          </div>
+
+          <!-- Posts Container -->
+          <div id="posts-container" class="space-y-6">
+            <!-- Posts will be loaded here via JavaScript -->
+          </div>
+
+          <div class="mt-8 mb-6 flex items-center gap-3">
+            <p class="text-gray-600">Read more at <a href="https://stateoftheart.net.au/author/jaynieng/" target="_blank" class="font-bold text-c1 hover:underline">State of the Art</a></p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TANGO SECTION -->
+      <section id="tango-section" class="section-content min-h-screen p-4 md:p-12 hidden">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold heading-font mb-8 pop-border inline-block px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-c1 to-c2 rounded-2xl">Tango</h2>
+
+          <!-- Image Carousel -->
+          <div class="mt-12 pop-border rounded-2xl overflow-hidden bg-paper texture-overlay">
+            <div class="relative">
+              <!-- Carousel Images -->
+              <div class="carousel-container relative overflow-hidden" style="height: 600px;">
+                <img src="images/tango.jpeg" alt="Tango 1" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100">
+                <img src="images/tango2.jpg" alt="Tango 2" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0">
+                <img src="images/tango3.jpg" alt="Tango 3" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0">
+                <img src="images/tango4.jpg" alt="Tango 4" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0">
+                <img src="images/tango5.jpg" alt="Tango 5" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0">
+                <img src="images/tango6.jpg" alt="Tango 6" class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0">
+              </div>
+
+              <!-- Carousel Controls -->
+              <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-paper/90 pop-border rounded-full p-3 hover:scale-110 transition-transform z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-paper/90 pop-border rounded-full p-3 hover:scale-110 transition-transform z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <!-- Carousel Indicators -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-paper pop-border transition-all"></button>
+                <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-paper/50 border-2 border-ink transition-all"></button>
+                <button onclick="goToSlide(2)" class="carousel-indicator w-3 h-3 rounded-full bg-paper/50 border-2 border-ink transition-all"></button>
+                <button onclick="goToSlide(3)" class="carousel-indicator w-3 h-3 rounded-full bg-paper/50 border-2 border-ink transition-all"></button>
+                <button onclick="goToSlide(4)" class="carousel-indicator w-3 h-3 rounded-full bg-paper/50 border-2 border-ink transition-all"></button>
+                <button onclick="goToSlide(5)" class="carousel-indicator w-3 h-3 rounded-full bg-paper/50 border-2 border-ink transition-all"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const hamburger = document.querySelector('.hamburger');
+
+      mobileNav.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const hamburger = document.querySelector('.hamburger');
+
+      mobileNav.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+
+    // Section Navigation
+    function showSection(sectionName) {
+      // Hide all sections
+      document.querySelectorAll('section[id$="-section"]').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Show selected section
+      document.getElementById(sectionName + '-section').classList.remove('hidden');
+
+      // Update active nav item
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      document.querySelector(`[data-section="${sectionName}"]`).classList.add('active');
+
+      // Load writing posts if writing section is shown
+      if (sectionName === 'writing' && !window.postsLoaded) {
+        loadPosts();
+      }
+    }
+
+    // Toggle expand/collapse for timeline items
+    function toggleExpand(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.expand-icon');
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Load posts from State of the Art
+    async function loadPosts() {
+      const container = document.getElementById('posts-container');
+      const loadingIndicator = document.getElementById('loading-indicator');
+
+      try {
+        // Fetch only Jaynie's posts using author ID
+        const response = await fetch('https://stateoftheart.net.au/wp-json/wp/v2/posts?author=36&per_page=5&_embed');
+
+        if (!response.ok) throw new Error('API request failed');
+
+        const posts = await response.json();
+
+        container.innerHTML = posts.map(post => {
+          // Extract featured image if available
+          const featuredImage = post._embedded && post._embedded['wp:featuredmedia']
+            ? post._embedded['wp:featuredmedia'][0].source_url
+            : null;
+
+          // Format date
+          const date = new Date(post.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+
+          return `
+            <article class="pop-border rounded-2xl overflow-hidden bg-paper texture-overlay hover:shadow-xl transition-shadow">
+              <div class="flex flex-col md:flex-row">
+                ${featuredImage ? `
+                  <div class="w-full md:w-48 h-40 md:h-40 bg-cover bg-center flex-shrink-0" style="background-image: url('${featuredImage}');"></div>
+                ` : `
+                  <div class="w-full md:w-48 h-40 md:h-40 bg-gradient-to-br from-c1 via-c2 to-c3 flex items-center justify-center text-4xl flex-shrink-0">
+                    ✍️
+                  </div>
+                `}
+                <div class="flex-1 p-4">
+                  <p class="text-xs text-gray-500 mb-1">${date}</p>
+                  <h3 class="text-lg font-bold heading-font mb-2">
+                    <a href="${post.link}" target="_blank" class="hover:text-c1 transition-colors">
+                      ${post.title.rendered}
+                    </a>
+                  </h3>
+                  <a href="${post.link}" target="_blank" class="inline-block px-3 py-1.5 bg-c5 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors text-xs">
+                    Read More →
+                  </a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        loadingIndicator.textContent = '';
+        window.postsLoaded = true;
+
+      } catch (error) {
+        console.error('Error loading posts:', error);
+        container.innerHTML = `
+          <div class="pop-border rounded-2xl p-8 bg-paper text-center">
+            <p class="text-gray-600 mb-4">Unable to load posts at the moment.</p>
+            <a href="https://stateoftheart.net.au/" target="_blank" class="inline-block px-6 py-3 bg-c1 pop-border rounded-lg font-medium hover:bg-opacity-80 transition-colors">
+              Visit State of the Art →
+            </a>
+          </div>
+        `;
+        loadingIndicator.textContent = '';
+      }
+    }
+
+    // Preload posts in background after page loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (!window.postsLoaded) {
+          loadPosts();
+        }
+      }, 2000);
+    });
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-image');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.style.opacity = '0';
+      });
+
+      // Reset all indicators
+      indicators.forEach(indicator => {
+        indicator.classList.remove('bg-paper', 'pop-border');
+        indicator.classList.add('bg-paper/50', 'border-2', 'border-ink');
+      });
+
+      // Show current slide
+      slides[index].style.opacity = '100';
+
+      // Highlight current indicator
+      indicators[index].classList.remove('bg-paper/50', 'border-2', 'border-ink');
+      indicators[index].classList.add('bg-paper', 'pop-border');
+
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const nextIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+
+    function prevSlide() {
+      const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prevIndex);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    // Auto-advance carousel every 5 seconds
+    let carouselInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-advance on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+      });
+
+      carouselContainer.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(nextSlide, 5000);
+      });
+    }
+  </script>
+
 </body>
 </html>
